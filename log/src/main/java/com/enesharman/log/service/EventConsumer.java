@@ -15,7 +15,7 @@ public class EventConsumer {
         this.eventService = eventService;
     }
 
-    @KafkaListener(topics = Topics.EVENT_TOPIC, groupId = ConsumerGroups.AUTOMATION_EVENT_CONSUMERS)
+    @KafkaListener(topics = Topics.EVENT_TOPIC, groupId = ConsumerGroups.LOG_EVENT_CONSUMERS)
     public void listen(Event event) {
         eventService.processEvent(event);
     }
